@@ -1,0 +1,16 @@
+{
+  "name": "v.ector",
+  "version": "0.1.1",
+  "description": "Vectors library",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
+}

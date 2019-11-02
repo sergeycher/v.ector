@@ -58,7 +58,7 @@ export function len(firstArg: Vector | number, length?: number): Vector | number
     if (arguments.length === 2) {
         return mul(norm(firstArg as Vector), length);
     } else {
-        if (Number.isFinite(firstArg as number)) {
+        if (!isNaN(+firstArg)) {
             return v => len(v, firstArg as number);
         } else {
             return Math.sqrt((firstArg as Vector).reduce((l, v) => l + v * v, 0));
