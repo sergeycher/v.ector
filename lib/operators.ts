@@ -93,3 +93,19 @@ export function clamp(arg1: [number, number] | Vector, borders?: [number, number
         return arg1 as Vector;
     }
 }
+
+export function product(v1: Vector, v2: Vector): number {
+    return v1.map((v, i) => v * v2[i]).reduce((a, v) => a + v, 0);
+}
+
+export function angleBetween(v1: Vector, v2: Vector): number {
+    const cos = product(v1, v2) / (len(v1) * len(v2));
+
+    return Math.acos(cos);
+}
+
+export function angleX(v1: Vector): number {
+    const axisX = vector(1, 0);
+
+    return angleBetween(v1, axisX);
+}
